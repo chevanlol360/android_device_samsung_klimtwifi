@@ -1,3 +1,15 @@
+domain_trans(init, gpsd_exec, gpsd)
+
+# /dev/block/mmcblk0p[0-9]
+allow init emmcblk_device:blk_file rw_file_perms;
+
+allow init block_device:lnk_file { setattr };
+allow init tmpfs:lnk_file create_file_perms;
+
+# /data
+allow init sdcardd_exec:file r_file_perms;
+
+# Unknown
 allow init drmserver_service:service_manager add;
 allow init sswap:process { transition siginh rlimitinh };
 allow init kernel:system module_request;
