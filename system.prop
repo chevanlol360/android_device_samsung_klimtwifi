@@ -24,6 +24,12 @@ ro.hwui.text_large_cache_width=4096
 ro.hwui.text_large_cache_height=4096
 ro.hwui.fbo_cache_size=16
 
+# Fixes game grashing (HeartStone)
+debug.egl.force_msaa=true
+
+# Disable persistent GPU compositing
+debug.sf.disable_hwc=1
+
 # Radio
 ro.radio.noril=yes
 
