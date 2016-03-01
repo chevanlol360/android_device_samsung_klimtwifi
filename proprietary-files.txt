@@ -99,11 +99,5 @@ etc/wifi/cred.conf:system/etc/wifi/cred.conf
 etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt
 
-# Move to device tree
-usr/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
-usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
-etc/gps.conf:system/etc/gps.conf
-etc/gps.xml:system/etc/gps.xml
-
 # sswap can't be pulled with extract script
 #sbin/sswap:root/sbin/sswap
