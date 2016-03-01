@@ -4,11 +4,7 @@ vendor/firmware/srp_data.bin:system/vendor/firmware/srp_data.bin
 vendor/firmware/srp_vliw.bin:system/vendor/firmware/srp_vliw.bin
 
 # Bluetooth
-vendor/firmware/bcm4350.hcd:system/vendor/firmware/bcm4350.hcd
-vendor/firmware/bcm4350_A0.hcd:system/vendor/firmware/bcm4350_A0.hcd
-vendor/firmware/bcm4350_murata.hcd:system/vendor/firmware/bcm4350_murata.hcd
-vendor/firmware/bcm4350_semco.hcd:system/vendor/firmware/bcm4350_semco.hcd
-vendor/firmware/BT_FW_VER_BCM4354_003.001.012.0197.0319_Klint_3G_WIFI_ORC.hcd:system/vendor/firmware/BT_FW_VER_BCM4354_003.001.012.0197.0319_Klint_3G_WIFI_ORC.hcd
+vendor/firmware/bcm4350_V0301.0609.hcd:system/vendor/firmware/bcm4350_V0301.0609.hcd
 
 # Graphics
 vendor/lib/egl/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so
