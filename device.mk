@@ -103,10 +103,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
 
 # FingerPrint
-PRODUCT_PACKAGES += \
-    fingerprintd \
-    fingerprint.universal5420 \
-    ValidityService
+#PRODUCT_PACKAGES += \
+#    fingerprintd \
+#    fingerprint.universal5420 \
+#    ValidityService
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -175,8 +175,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+#    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
 # Power
 PRODUCT_PACKAGES += \
@@ -250,3 +250,6 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5420/exynos5420.mk)
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/samsung/klimtwifi/klimtwifi-vendor.mk)
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/samsung/klimt-common/klimt-common-vendor.mk)
