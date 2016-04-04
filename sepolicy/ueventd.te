@@ -1,5 +1,1 @@
-# /dev/block/mmcblk0p[0-9]
-allow ueventd emmcblk_device:blk_file create_file_perms;
-
-# Unknown
 allow ueventd kernel:system module_request;

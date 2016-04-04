@@ -1,5 +1,2 @@
 # UMS: rw access to files in /dev/block/vold
 allow kernel block_device:blk_file rw_file_perms;
-
-# /sys/devices/system/cpu/cpu[0-9]/cpufreq/*
-allow kernel sysfs_devices_system_cpu:file { setattr };
