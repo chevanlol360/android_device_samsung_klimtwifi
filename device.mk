@@ -102,6 +102,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
     $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
+
 # FingerPrint
 #PRODUCT_PACKAGES += \
 #    fingerprintd \
