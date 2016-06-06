@@ -18,30 +18,11 @@ LOCAL_PATH := device/samsung/klimtwifi
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-PRODUCT_CHARACTERISTICS := tablet
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.primary.universal5420 \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
-    mixer_paths.xml \
-    tinymix
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
 
-# Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1600
 
 PRODUCT_PACKAGES += \
     libsamsung_symbols
@@ -49,18 +30,6 @@ PRODUCT_PACKAGES += \
 # boringssl-compat
 PRODUCT_PACKAGES += \
     libboringssl-compat
-
-# Camera
-PRODUCT_PACKAGES += \
-    camera.universal5420 \
-    libhwjpeg
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
-# hardware/samsung/AdvancedDisplay (MDNIE)
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
 
 # adb has root
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -71,26 +40,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.debuggable=1 \
     persist.service.adb.enable=1
 
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    e2fsck \
-    setup_fs
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.universal5420 \
-    libdmitry
-
-# HW composer
-PRODUCT_PACKAGES += \
-    libion \
-    gralloc.exynos5
-
-# IR
-PRODUCT_PACKAGES += \
-    consumerir.universal5420
-
 # TouchScreen
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
@@ -98,30 +47,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
     $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
 
-# GPS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
-
-# FingerPrint
-#PRODUCT_PACKAGES += \
-#    fingerprintd \
-#    fingerprint.universal5420 \
-#    ValidityService
-
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.exynos5
 
 # libstlport
 # M removes libstlport, but some of our binary-only prebuilts need it, so we'll
 # add it back
 PRODUCT_PACKAGES += \
     libstlport
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.universal5420
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -131,19 +62,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# Misc
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
-# MobiCore setup
-PRODUCT_PACKAGES += \
-    libMcClient \
-    libMcRegistry \
-    libPaApi \
-    libgdmcprov
+
+
 
 # Network tools
-
 PRODUCT_PACKAGES += \
     libpcap \
     tcpdump
@@ -156,8 +79,6 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -171,13 +92,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-#    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
+
 
 # Power
 PRODUCT_PACKAGES += \
